@@ -16,12 +16,8 @@ public class Program {
 		products.add(new Product("Tablet", 4000.00));
 		products.add(new Product("Computer", 5000.00));
 		
-		Comparator<Product> comp = new Comparator<Product>() {
-		
-			@Override
-			public int compare(Product p1, Product p2) {
-				return p1.getPrice().compareTo(p2.getPrice());
-			}
+		Comparator<Product> comp = (p1, p2) -> {
+			return p1.getPrice().compareTo(p2.getPrice());
 		};
 		
 		products.sort(comp);
